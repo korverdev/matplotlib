@@ -7,6 +7,7 @@ on:
     branches:
       - main
       - v[0-9]+.[0-9]+.x
+      - arm_musl
     tags:
       - v*
   # Also allow running this action on PRs if requested by applying the
@@ -114,12 +115,12 @@ jobs:
             cibw_archs: "x86_64"
           - os: ubuntu-20.04
             cibw_archs: "aarch64"
-          - os: windows-latest
-            cibw_archs: "auto64"
-          - os: macos-12
-            cibw_archs: "x86_64"
-          - os: macos-14
-            cibw_archs: "arm64"
+          # - os: windows-latest
+          #   cibw_archs: "auto64"
+          # - os: macos-12
+          #   cibw_archs: "x86_64"
+          # - os: macos-14
+          #   cibw_archs: "arm64"
 
     steps:
       - name: Set up QEMU
